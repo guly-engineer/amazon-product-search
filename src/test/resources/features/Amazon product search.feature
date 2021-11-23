@@ -7,7 +7,7 @@ Feature: Amazon product search
     Given I am on the "https://www.amazon.co.uk" page
     And I search for "socks"
 
-  @solo1
+  @solo
   Scenario: I can search an item
     Then I am able to scroll through all search results
     And I see that each item has following attributes:
@@ -16,7 +16,6 @@ Feature: Amazon product search
       | rating    |
       | price     |
 
-  @solo
   Scenario: I can view more about an item
     When I click on the thumbnail of the 2. item
     Then I am able to view more about the item

@@ -20,7 +20,7 @@ public class AmazonProductSearch
 {
     WebDriver driver;
     private static WebDriver newDriver() {
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chrome-v94.0.4606.61/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_96.0.4664.45/chromedriver.exe");
         return new ChromeDriver();
     }
 
@@ -44,7 +44,7 @@ public class AmazonProductSearch
 
     @When("I search for {string}")
     public void i_search_for(String item) {
-        WebElement searchElement = driver.findElement(By.cssSelector("input[type='text']"));
+        WebElement searchElement = driver.findElement(By.id("twotabsearchtextbox"));
         searchElement.sendKeys(item);
         searchElement.submit();
     }
@@ -55,6 +55,12 @@ public class AmazonProductSearch
                 .sendKeys(Keys.END)
                 .build()
                 .perform();
+
+        new Actions(driver)
+                .sendKeys(Keys.HOME)
+                .build()
+                .perform();
+
     }
 
     @Then("I see that each item has following attributes:$")
