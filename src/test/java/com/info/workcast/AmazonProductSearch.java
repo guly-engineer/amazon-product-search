@@ -103,10 +103,8 @@ public class AmazonProductSearch
 
     private void validatePrice(WebElement productItem) {
         List<WebElement> priceTags = productItem.findElements(By.cssSelector(".a-price[data-a-color='base']"));
-        //There could be multiple prices because of discount
-        //assertThat(priceTags).isNotEmpty();
-        //assertThat(priceTags.get(0).getText()).isNotBlank();
         assertThat(priceTags).hasSize(1);
+        assertThat(priceTags.get(0).getText()).isNotBlank();
     }
 
     @Then("I click on the thumbnail of the {int}. item")
