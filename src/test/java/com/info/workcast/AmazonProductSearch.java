@@ -102,16 +102,17 @@ public class AmazonProductSearch
     }
 
     private void validatePrice(WebElement productItem) {
-        List<WebElement> priceTags = productItem.findElements(By.className("a-offscreen"));
+        List<WebElement> priceTags = productItem.findElements(By.cssSelector(".a-price[data-a-color='base']"));
         //There could be multiple prices because of discount
-        assertThat(priceTags).isNotEmpty();
-        assertThat(priceTags.get(0).getText()).isNotBlank();
+        //assertThat(priceTags).isNotEmpty();
+        //assertThat(priceTags.get(0).getText()).isNotBlank();
+        assertThat(priceTags).hasSize(1);
     }
 
     @Then("I click on the thumbnail of the {int}. item")
     public void i_click_on_the_thumbnail_a_particular_product(int itemIndex) {
         productItems()
-                .get(itemIndex)
+                .get(itemIndex-1)
                 .findElement(By.tagName("img"))
                 .click();
     }
