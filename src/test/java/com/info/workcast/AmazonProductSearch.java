@@ -32,7 +32,7 @@ public class AmazonProductSearch {
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-debugging-port=9222");
-        options.addArguments("--crash-dumps-dir=/tmp");
+        options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
 
 //        String osName = System.getProperty("os.name").toLowerCase();
 //
