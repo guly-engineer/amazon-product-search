@@ -20,7 +20,7 @@ public class AmazonProductSearch
 {
     WebDriver driver;
     private static WebDriver newDriver() {
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_106/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_106/chromedriver_linux");
         return new ChromeDriver();
     }
 
