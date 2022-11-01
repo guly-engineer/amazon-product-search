@@ -28,9 +28,11 @@ public class AmazonProductSearch {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--crash-dumps-dir=/tmp");
 
 //        String osName = System.getProperty("os.name").toLowerCase();
 //
