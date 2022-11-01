@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
@@ -20,7 +21,21 @@ public class AmazonProductSearch
 {
     WebDriver driver;
     private static WebDriver newDriver() {
-        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver_106/chromedriver_linux");
+        String osName = System.getProperty("os.name").toLowerCase();
+
+        if (osName.contains("win")) {
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver.exe");
+        } else if (osName.contains("linux")) {
+            System.setProperty("webdriver.chrome.driver", "user.home" + "/chromedriver_linux");
+        } else {
+            throw new RuntimeException("OS not supported");
+        }
+        ChromeOptions options = new ChromeOptions();
+        if (Boolean.parseBoolean(System.getProperty("headless")) == true) {
+            options.addArguments("--headless");
+        }
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
         return new ChromeDriver();
     }
 
