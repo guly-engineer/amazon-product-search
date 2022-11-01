@@ -4,6 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,31 +13,41 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
+
+
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class AmazonProductSearch
-{
+public class AmazonProductSearch {
     WebDriver driver;
-    private static WebDriver newDriver() {
-        String osName = System.getProperty("os.name").toLowerCase();
 
-        if (osName.contains("win")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver.exe");
-        } else if (osName.contains("linux")) {
-            System.setProperty("webdriver.chrome.driver", "user.home" + "/chromedriver_linux");
-        } else {
-            throw new RuntimeException("OS not supported");
-        }
+    private static WebDriver newDriver() {
+
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        if (Boolean.parseBoolean(System.getProperty("headless")) == true) {
-            options.addArguments("--headless");
-        }
-        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+
+//        String osName = System.getProperty("os.name").toLowerCase();
+//
+//        if (osName.contains("win")) {
+//            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver.exe");
+//        } else if (osName.contains("linux")) {
+//            System.setProperty("webdriver.chrome.driver", "/chromedriver_linux");
+//        } else {
+//            throw new RuntimeException("OS not supported");
+//        }
+//        ChromeOptions options = new ChromeOptions();
+//        if (Boolean.parseBoolean(System.getProperty("headless")) == true) {
+//            options.addArguments("--headless");
+//        }
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--no-sandbox");
         return new ChromeDriver();
+
     }
 
     @After
