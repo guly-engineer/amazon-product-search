@@ -31,7 +31,7 @@ public class AmazonProductSearch {
         if (osName.contains("win")) {
             System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver.exe");
         } else if (osName.contains("linux")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_107/chromedriver");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver-linux");
         } else {
             throw new RuntimeException("OS not supported");
         }
