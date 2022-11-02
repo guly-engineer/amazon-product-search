@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         tags = "@solo",
         features = {"classpath:features"},
-        glue = {"com.info.workcast"})
+        glue = {"com.info.workcast"},
+        publish = true)
 public class SoloTest {
 }

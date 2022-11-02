@@ -43,23 +43,6 @@ public class AmazonProductSearch {
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-debugging-port=9222");
-        //options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
-
-//        String osName = System.getProperty("os.name").toLowerCase();
-//
-//        if (osName.contains("win")) {
-//            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver.exe");
-//        } else if (osName.contains("linux")) {
-//            System.setProperty("webdriver.chrome.driver", "/chromedriver_linux");
-//        } else {
-//            throw new RuntimeException("OS not supported");
-//        }
-//        ChromeOptions options = new ChromeOptions();
-//        if (Boolean.parseBoolean(System.getProperty("headless")) == true) {
-//            options.addArguments("--headless");
-//        }
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--no-sandbox");
         return new ChromeDriver();
 
     }

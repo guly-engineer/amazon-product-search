@@ -25,14 +25,6 @@ jobs:
 
     - name: Install Chrome
       uses: browser-actions/setup-chrome@latest
-#    - name: Install Google Chrome # Using shell script to install Google Chrome
-#      run: |
-#        chmod +x ./scripts/InstallChrome.sh
-#                    ./scripts/InstallChrome.sh
-#    - name: Set up virtual X11
-#      run: sudo apt-get install xvfb
-#    - name: Start virtual frame buffer
-#      run: Xvfb :19 -screen 0 1024x768x16 &
 
     - name: Cache Maven packages
       uses: actions/cache@v1
@@ -44,3 +36,4 @@ jobs:
       run: xvfb-run mvn -B package --file pom.xml
       env:
         DISPLAY: 19
+        CUCUMBER_PUBLISH_TOKEN: 6a0ca52d-bf14-4815-9486-d041f06bc024
