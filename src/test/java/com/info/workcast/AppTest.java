@@ -7,6 +7,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         tags = "not @ignore",
         features = {"classpath:features"},
+        plugin = {"pretty",
+                "html:test-reports/cucumber-reports/index.html",
+                "html:target/cucumber-reports/cucumber.html",
+                "json:target/cucumber-reports/cucumber.json"
+        },
         glue = {"com.info.workcast"},
         publish = true)
 public class AppTest {
