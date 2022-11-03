@@ -7,14 +7,13 @@ Feature: Amazon product search
     Given I am on the "https://www.amazon.co.uk" page
     And I search for "socks"
 
-  @solo
-  Scenario: I can search an item
-    Then I am able to scroll through all search results
-    And I see that each item has following attributes:
-      | thumbnail |
-      | title     |
-      | rating    |
-      | price     |
+  #Scenario: I can search an item
+    #Then I am able to scroll through all search results
+    #And I see that each item has following attributes:
+    #  | thumbnail |
+   #   | title     |
+     # | rating    |
+    #  | price     |
 
 
   Scenario: I can view more about an item
