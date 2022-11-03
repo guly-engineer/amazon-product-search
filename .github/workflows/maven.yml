@@ -40,6 +40,7 @@ jobs:
         DISPLAY: 19
         CUCUMBER_PUBLISH_TOKEN: 6a0ca52d-bf14-4815-9486-d041f06bc024
     - name: Deploy 🚀
+      if: always()
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         branch: gh-pages
