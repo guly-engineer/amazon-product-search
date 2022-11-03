@@ -60,8 +60,8 @@ public class AmazonProductSearch {
         driver = newDriver();
         driver.navigate().to(url);
         driver.manage().window().maximize();
-        WebElement acceptCookie=driver.findElement(By.id("a-autoid-0"));
-        acceptCookie.submit();
+        //WebElement acceptCookie=driver.findElement(By.id("a-autoid-0"));
+        //acceptCookie.submit();
 
     }
 

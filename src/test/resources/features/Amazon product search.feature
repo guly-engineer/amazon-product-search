@@ -17,7 +17,7 @@ Feature: Amazon product search
 
 
   Scenario: I can view more about an item
-    When I click on the thumbnail of the 3. item
-    Then I am able to view more about the item
+   # When I click on the thumbnail of the 3. item
+   # Then I am able to view more about the item
 
 
