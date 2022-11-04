@@ -1,4 +1,4 @@
-package com.info.workcast;
+package com.info.amazon;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
