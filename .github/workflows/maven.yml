@@ -45,3 +45,41 @@ jobs:
       with:
         branch: gh-pages
         folder: ./test-reports/cucumber-reports
+        
+    - name: Test Reporter
+  # You may pin to the exact commit or the version.
+  # uses: dorny/test-reporter@c9b3d0e2bd2a4e96aaf424dbaa31c46b42318226
+      uses: dorny/test-reporter@v1.6.0
+      with:
+    # Name or regex of artifact containing test results
+    artifact: # optional
+    # Name of the check run
+    name: Run Tests
+    # Coma separated list of paths to test results
+    path: "**/surefire-reports/TEST-*.xml"
+  
+    path-replace-backslashes: # optional, default is false
+    # Format of test results. Supported options:
+
+    reporter: java-junit
+    # Limits which test suites are listed. Supported options:
+
+    list-suites: # default is all
+    # Limits which test cases are listed. Supported options:
+
+    list-tests: # default is all
+    # Limits number of created annotations with error message and stack trace captured during test execution.
+Must be less or equal to 50.
+
+    max-annotations: # default is 10
+    # Set this action as failed if test report contain any failed test
+    fail-on-error: # default is true
+    # Relative path under $GITHUB_WORKSPACE where the repository was checked out
+    working-directory: # optional
+    # Allows you to generate only the summary.
+If enabled, the report will contain a table listing each test results file and the number of passed, failed, and skipped tests.
+Detailed listing of test suites and test cases will be skipped.
+
+    only-summary: # optional, default is false
+    # GitHub Access Token
+    token: # optional, default is ${{ github.token }}
