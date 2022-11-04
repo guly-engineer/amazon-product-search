@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber-reports/cucumber.html",
                 "json:target/cucumber-reports/cucumber.json"
         },
-        glue = {"com.info.workcast"},
+        glue = {"com.info.amazon"},
         publish = true)
 public class AppTest {
 }
