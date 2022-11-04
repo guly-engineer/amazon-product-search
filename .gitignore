@@ -1,4 +1,6 @@
 /target/
+!site/**
+!TEST-com.info.amazon.AppTest.xml
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
