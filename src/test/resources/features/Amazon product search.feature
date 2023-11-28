@@ -9,15 +9,15 @@ Feature: Amazon product search
 
   Scenario: I can search an item
     Then I am able to scroll through all search results
-    #And I see that each item has following attributes:
-    #  | thumbnail |
-   #   | title     |
-     # | rating    |
-    #  | price     |
+    And I see that each item has following attributes:
+      | thumbnail |
+      | title     |
+      | rating    |
+      | price     |
 
 
-  #Scenario: I can view more about an item
-  #  When I click on the thumbnail of the 3. item
-  #  Then I am able to view more about the item
+  Scenario: I can view more about an item
+    When I click on the thumbnail of the 3. item
+    Then I am able to view more about the item
 
 

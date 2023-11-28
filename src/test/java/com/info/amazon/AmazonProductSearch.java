@@ -24,16 +24,6 @@ public class AmazonProductSearch {
 
     private static WebDriver newDriver() {
 
-       // WebDriverManager.chromedriver().setup();
-        String osName = System.getProperty("os.name").toLowerCase();
-
-        if (osName.contains("win")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver.exe");
-        } else if (osName.contains("linux")) {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver_106/chromedriver-linux");
-        } else {
-            throw new RuntimeException("OS not supported");
-        }
         ChromeOptions options = new ChromeOptions();
         if (Boolean.parseBoolean(System.getProperty("headless")) == true) {
             options.addArguments("--headless");
